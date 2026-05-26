@@ -99,7 +99,8 @@
             <div data-aos="fade-left" class="home__container container grid">
                 <div class="home__content grid">
                     <div class="home__social">
-                        <a href="https://linkedin.com/in/aman-singh-14a305248" target="_blank" class="home__social-icon">
+                        <a href="https://linkedin.com/in/aman-singh-14a305248" target="_blank"
+                            class="home__social-icon">
                             <i class="uil uil-linkedin"></i></a>
                         </a>
 
@@ -644,72 +645,9 @@
             <h2 class="section__title">Portfolio</h2>
             <span class="section__subtitle">Most recent work</span>
 
-            <div data-aos="fade-right" class="portfolio__container container swiper-container">
-                <div class="swiper-wrapper">
-
-                    <!--==================== PORTFOLIO 1 ====================-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/portfolio1.jpg" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">eDropship Platform</h3>
-                            <p class="portfolio__description">
-                                Large-scale dropshipping system with product synchronization, inventory management,
-                                queue-based processing, and multi-marketplace automation workflows.
-                            </p>
-                            <a href="https://edropship.com/" class="button button--flex button--small portfolio_-button" target="_blank">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!--==================== PORTFOLIO 2 ====================-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/portfolio2.jpg" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">CartModules Add-ons</h3>
-                            <p class="portfolio__description">
-                                Custom CS-Cart marketplace connector add-ons integrating Shopify, WooCommerce,
-                                and other platforms with automated product, order, and inventory synchronization.
-                            </p>
-                            <a href="https://cartmodules.com" class="button button--flex button--small portfolio_-button" target="_blank">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!--==================== PORTFOLIO 3 ====================-->
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/portfolio3.jpg" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Multi-Vendor E-Commerce Systems</h3>
-                            <p class="portfolio__description">
-                                Developed custom e-commerce solutions with payment gateway integrations,
-                                shipping APIs (ShipStation, Shippo, EasyParcel), and scalable backend architecture.
-                            </p>
-                            <a href="#" class="button button--flex button--small portfolio_-button">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Add Arrows -->
-                <div class="swiper-button-next">
-                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-                </div>
-                <div class="swiper-button-prev">
-                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-                </div>
-
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
+            <div class="projects-panel container">
+                <div class="proj-list" id="proj-list"></div>
+                <div class="proj-detail" id="proj-detail"></div>
             </div>
         </section>
 
@@ -902,6 +840,157 @@
             const icon = btn.querySelector('.ti-plus, .ti-minus');
             if (icon) icon.className = isOpen ? 'ti ti-minus' : 'ti ti-plus';
         }
+    </script>
+
+    <script>
+        const projects = [
+            {
+                name: "Edropship",
+                tag: "Marketplace Automation",
+                icon: "ti-package",
+                type: "Full-stack Platform",
+                link: 'https://www.edropship.com/',
+                scale: "Enterprise",
+                desc: `Developed a <strong>large-scale dropshipping automation platform</strong> handling thousands of products, inventory synchronization, and queue-based background processing. Built scalable workflows for order routing, supplier synchronization, pricing automation, and multi-channel marketplace operations.`,
+                stack: ["PHP", "MySQL", "REST APIs", "Queue Processing", "Cron Jobs", "Webhooks"]
+            },
+
+            {
+                name: "Custom Add-ons",
+                tag: "Platform Integrations",
+                icon: "ti-plug-connected",
+                type: "Plugin Development",
+                link: 'https://www.cartmodules.com/',
+                scale: "Published Solutions",
+                desc: `Developed and published <strong>custom marketplace, payment, and shipment add-ons</strong> for multiple commerce platforms. Built integrations for Shopify, WooCommerce, ShipStation, Shippo, Apple Pay, and Tabby while implementing automation workflows for inventory synchronization, order processing, shipping management, and payment operations.`,
+                stack: ["Shopify", "WooCommerce", "ShipStation", "Shippo", "Apple Pay", "Tabby", "REST APIs"]
+            },
+
+            {
+                name: "Nida Danish",
+                tag: "Commerce & Delivery",
+                icon: "ti-device-mobile",
+                type: "Full-stack Development",
+                link: 'https://www.nidadanish.com/',
+                scale: "Consumer Platform",
+                desc: `Developed custom commerce functionality, mobile-focused APIs, and operational workflows to improve platform scalability and user experience. Integrated <strong>Tookan delivery services</strong> for real-time dispatch, delivery tracking, and streamlined fulfillment operations.`,
+                stack: ["PHP", "MySQL", "REST APIs", "Tookan", "JavaScript"]
+            },
+
+            {
+                name: "Fireplace Doors Online",
+                tag: "Product Customization",
+                icon: "ti-flame",
+                type: "Custom Commerce",
+                link: 'https://www.fireplacedoorsonline.com/',
+                scale: "Retail Platform",
+                desc: `Developed advanced <strong>product customization workflows</strong> for configurable fireplace products with dynamic pricing, dimension-based options, and tailored checkout logic. Enhanced filtering, purchasing experience, and operational flexibility for specialty commerce workflows.`,
+                stack: ["PHP", "JavaScript", "Tax Logic", "Custom Pricing"]
+            },
+
+            {
+                name: "Landb Apparel",
+                tag: "B2B Wholesale",
+                icon: "ti-shirt",
+                type: "Marketplace Integration",
+                link: 'https://www.landbapparel.com/',
+                scale: "Wholesale Commerce",
+                desc: `Implemented a custom <strong>Faire wholesale integration</strong> enabling automated synchronization of B2B orders, inventory, catalog data, and pricing workflows. Delivered storefront enhancements and operational improvements to optimize wholesale purchasing experiences.`,
+                stack: ["Faire API", "B2B Integration", "REST APIs", "PHP", "Frontend"]
+            },
+
+            {
+                name: "Clinicsandco",
+                tag: "Healthcare",
+                icon: "ti-stethoscope",
+                type: "Marketplace Development",
+                link: 'https://www.clinicsandco.com/',
+                scale: "Multi-vendor",
+                desc: `Developed custom marketplace functionality and frontend enhancements for a <strong>B2B healthcare commerce platform</strong>. Built synchronization workflows for products, inventory, and order management across multiple storefronts while improving operational scalability and vendor coordination.`,
+                stack: ["Multi-vendor", "Inventory Sync", "REST APIs", "PHP", "Frontend"]
+            },
+            {
+                name: "ProjectWave",
+                tag: "Business Platform",
+                icon: "ti-layout-dashboard",
+                type: "Frontend & Integration",
+                link: "https://www.projectwave.cz/",
+                scale: "Business Operations",
+                desc: `Worked on frontend development and backend customizations for a <strong>business operations platform</strong>. Implemented UI enhancements, custom workflow modifications, and integrated the Fakturoid invoicing system for automated label generation and operational processing.`,
+                stack: ["Frontend", "PHP", "JavaScript", "Fakturoid", "Backend Customization"]
+            },
+            {
+                name: "Proxicast",
+                tag: "Business Platform",
+                icon: "ti-briefcase",
+                type: "Backend Customization",
+                link: "https://www.proxicast.com/",
+                scale: "Business Operations",
+                desc: `Worked on custom backend development and operational workflow enhancements for a <strong>business management platform</strong>. Developed custom quotation workflows, project notification systems, and platform-specific process automation while improving operational efficiency and backend management.`,
+                stack: ["PHP", "Backend Customization", "Notifications", "Quotation Workflow"]
+            }
+        ];
+
+        let active = 0;
+
+        function renderList() {
+            document.getElementById('proj-list').innerHTML = projects.map((p, i) => `
+    <div class="proj-item${i === active ? ' active' : ''}" onclick="select(${i})">
+      <span class="proj-number">0${i + 1}</span>
+      <div class="proj-info">
+        <div class="proj-name">${p.name}</div>
+        <div class="proj-tag">${p.tag}</div>
+      </div>
+      <i class="ti ti-chevron-right proj-arrow" aria-hidden="true"></i>
+    </div>
+  `).join('');
+        }
+
+        function renderDetail(i) {
+            const p = projects[i];
+            document.getElementById('proj-detail').innerHTML = `
+    <div class="detail-header">
+      <div class="detail-icon-wrap"><i class="ti ${p.icon}" aria-hidden="true"></i></div>
+      <div class="detail-title-block">
+        <div class="detail-title">${p.name}</div>
+        <div class="detail-subtitle">
+            <span class="detail-type">${p.type}</span>
+            <span class="detail-separator"></span>
+            <a href="${p.link}" target="_blank" class="project-live-link">
+                Visit Live Site
+                <i class="ti ti-arrow-up-right"></i>
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="detail-divider"></div>
+    <p class="detail-desc">${p.desc}</p>
+    <div class="detail-stack">${p.stack.map(s => `<span class="stack-tag">${s}</span>`).join('')}</div>
+    <div class="detail-meta">
+      <div class="meta-card">
+        <div class="meta-label">Type</div>
+        <div class="meta-val">${p.type.split(' ')[0]}</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Focus</div>
+        <div class="meta-val">${p.tag}</div>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Scale</div>
+        <div class="meta-val">${p.scale}</div>
+      </div>
+    </div>
+  `;
+        }
+
+        function select(i) {
+            active = i;
+            renderList();
+            renderDetail(i);
+        }
+
+        renderList();
+        renderDetail(0);
     </script>
 
 </body>
