@@ -807,7 +807,11 @@ footer .footer__social a:hover { color: var(--first-color-lighter); }
   font-size: var(--smaller-font-size);
   text-align: center;
   color: var(--text-color-light);
-  margin-top: var(--mb-3);
+  margin-top: 12px !important;
+  color: #fff;
+}
+.footer .footer__bg{
+  padding-bottom: 8px !important;
 }
 
 .footer__title,
