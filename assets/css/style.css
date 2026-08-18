@@ -184,6 +184,7 @@ img { max-width: 100%; height: auto; }
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
+    left: 0px;
     bottom: -100%;
     width: 100%;
     background-color: var(--body-color);
